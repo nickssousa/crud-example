@@ -1,15 +1,27 @@
 <template>
   <div id="app">
-    <TableComponent />
+    <ActionButton
+      @add-entry="addEntryToTable"
+    />
+    <TableComponent
+      ref="tableComponent"
+    />
   </div>
 </template>
 
 <script>
   import TableComponent from '@/components/TableComponent'
+  import ActionButton from '@/components/ActionButton'
 
   export default {
     components: {
-      TableComponent
+      TableComponent,
+      ActionButton
+    },
+    methods: {
+      addEntryToTable(entry) {
+        this.$refs?.tableComponent.tableData.push(entry)
+      }
     }
   }
 </script>
