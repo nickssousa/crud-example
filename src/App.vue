@@ -1,7 +1,22 @@
 <template>
-  <div id="app"></div>
+  <div id="app">
+    <TableComponent />
+  </div>
 </template>
 
 <script>
-  export default {}
+  import TableComponent from '@/components/TableComponent'
+
+  export default {
+    components: {
+      TableComponent
+    }
+  }
 </script>
+
+<style lang="scss">
+  * {
+    box-sizing: border-box;
+    font-family: "helvetica";
+  }
+</style>
